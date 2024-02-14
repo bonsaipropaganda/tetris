@@ -4,18 +4,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_o0o74"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 100, 26, 0, 0, 0, 0, 379, 22)
+"points": PackedVector2Array(-22.1943, 0.435143, 32, 0, 32, 0, 0, 0, 0, 0, 288, 0)
 }
 point_count = 2
 
 [node name="Spawner" type="Node2D"]
-position = Vector2(0, 17)
 script = ExtResource("1_dbytf")
 
 [node name="SpawnPath" type="Path2D" parent="."]
-position = Vector2(27, 25)
 curve = SubResource("Curve2D_o0o74")
 
 [node name="SpawnLocation" type="PathFollow2D" parent="SpawnPath"]
-position = Vector2(100, 26)
-rotation = -0.0143359
+position = Vector2(32, 0)

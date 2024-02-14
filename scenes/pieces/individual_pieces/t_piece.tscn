@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://3wp4atj3sne8" path="res://scenes/pieces/base_piece.tscn" id="1_l1jfg"]
 
 [node name="TPiece" instance=ExtResource("1_l1jfg")]
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0.5)
