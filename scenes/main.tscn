@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbqv8opn5u1vx"]
+[gd_scene load_steps=10 format=3 uid="uid://bbqv8opn5u1vx"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_52pof"]
 [ext_resource type="PackedScene" uid="uid://dk1okrsf3yo7" path="res://scenes/game_area.tscn" id="1_kabkd"]
 [ext_resource type="PackedScene" uid="uid://bqj16cvwrs3vr" path="res://scenes/spawner.tscn" id="2_kq4k2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwml6"]
-size = Vector2(634, 22)
+[ext_resource type="Script" path="res://code/tetris_checker.gd" id="4_r5wxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agpf7"]
 size = Vector2(634, 22)
@@ -15,17 +14,19 @@ size = Vector2(104, 573)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6awyl"]
 size = Vector2(218, 568)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjbk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy4xc"]
+size = Vector2(312, 20)
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_52pof")
 
 [node name="GameArea" parent="." instance=ExtResource("1_kabkd")]
 
 [node name="Spawner" parent="." instance=ExtResource("2_kq4k2")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(320, 14)
-shape = SubResource("RectangleShape2D_jwml6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(320, 563)
@@ -38,3 +39,206 @@ shape = SubResource("RectangleShape2D_x0j7q")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(531, 290)
 shape = SubResource("RectangleShape2D_6awyl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 106.0
+offset_top = 64.0
+offset_right = 146.0
+offset_bottom = 104.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel2" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel2"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel2/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel3" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel3"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel3/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel4" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel4"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel4/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel5" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel5"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel5/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel6" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel6"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel6/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel7" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel7"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel7/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel8" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel8"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel8/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel9" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel9"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel9/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel10" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel10"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel10/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel11" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel11"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel11/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel12" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel12"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel12/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel13" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel13"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel13/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[node name="Panel14" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rjbk8")
+
+[node name="TetrisChecker" type="Area2D" parent="VBoxContainer/Panel14"]
+position = Vector2(159, 15)
+script = ExtResource("4_r5wxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBoxContainer/Panel14/TetrisChecker"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_xy4xc")
+
+[connection signal="body_entered" from="VBoxContainer/Panel/TetrisChecker" to="VBoxContainer/Panel/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel2/TetrisChecker" to="VBoxContainer/Panel2/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel3/TetrisChecker" to="VBoxContainer/Panel3/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel4/TetrisChecker" to="VBoxContainer/Panel4/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel5/TetrisChecker" to="VBoxContainer/Panel5/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel6/TetrisChecker" to="VBoxContainer/Panel6/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel7/TetrisChecker" to="VBoxContainer/Panel7/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel8/TetrisChecker" to="VBoxContainer/Panel8/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel9/TetrisChecker" to="VBoxContainer/Panel9/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel10/TetrisChecker" to="VBoxContainer/Panel10/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel11/TetrisChecker" to="VBoxContainer/Panel11/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel12/TetrisChecker" to="VBoxContainer/Panel12/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel13/TetrisChecker" to="VBoxContainer/Panel13/TetrisChecker" method="_on_body_entered"]
+[connection signal="body_entered" from="VBoxContainer/Panel14/TetrisChecker" to="VBoxContainer/Panel14/TetrisChecker" method="_on_body_entered"]

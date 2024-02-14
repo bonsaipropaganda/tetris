@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvx8ckjfo8epi"]
+
+[ext_resource type="Texture2D" uid="uid://dnt1eifd62jg4" path="res://art/FREE_Tetris_Asset_Pack/blocks/blue_block/blue_block.png" id="1_lw4ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lcin"]
+size = Vector2(128, 32)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7dq8f"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpv0n"]
+size = Vector2(32, 32)
+
+[node name="TestPiece" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+mass = 0.5
+gravity_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 0)
+shape = SubResource("RectangleShape2D_2lcin")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_7dq8f")
+gravity_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_bpv0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_lw4ak")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(32, 0)
+mass = 0.1
+gravity_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("RectangleShape2D_bpv0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+texture = ExtResource("1_lw4ak")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(64, 0)
+mass = 0.1
+gravity_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("RectangleShape2D_bpv0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+texture = ExtResource("1_lw4ak")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(96, 0)
+mass = 0.1
+gravity_scale = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+shape = SubResource("RectangleShape2D_bpv0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+texture = ExtResource("1_lw4ak")

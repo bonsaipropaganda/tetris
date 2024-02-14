@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://3wp4atj3sne8"]
+[gd_scene load_steps=5 format=3 uid="uid://3wp4atj3sne8"]
 
+[ext_resource type="Script" path="res://code/base_piece.gd" id="1_hfnwc"]
 [ext_resource type="Texture2D" uid="uid://r0is3qq61l1n" path="res://art/FREE_Tetris_Asset_Pack/blocks/blue_block/blue_T1.png" id="1_n5u7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjsvb"]
@@ -8,7 +9,9 @@ size = Vector2(94, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33l66"]
 size = Vector2(32, 57)
 
-[node name="BasePiece" type="CharacterBody2D"]
+[node name="BasePiece" type="RigidBody2D"]
+mass = 0.5
+script = ExtResource("1_hfnwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_n5u7n")
