@@ -1,15 +1,11 @@
 extends Node2D
 
-# this is just to test the spawning
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		spawn_piece()
+func _ready():
+	Global.spawn_piece.connect(spawn_piece)
+	Global.start_game.connect(spawn_piece)
 
 func spawn_piece():
 	var p = Global.pieces.pick_random().instantiate()
-	$SpawnPath/SpawnLocation.progress_ratio = randf()
-	while int($SpawnPath/SpawnLocation.progress) % 32 != 0.0:
-		$SpawnPath/SpawnLocation.progress_ratio = randf()
-	p.global_position = $SpawnPath/SpawnLocation.global_position
+	p.global_position = self.global_position
 	owner.add_child(p)
 	Global.current_piece = p

@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://vp8shs04l1y"]
+[gd_scene load_steps=4 format=3 uid="uid://vp8shs04l1y"]
 
 [ext_resource type="PackedScene" uid="uid://3wp4atj3sne8" path="res://scenes/pieces/base_piece.tscn" id="1_l1jfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_run3f"]
+size = Vector2(94, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_expxt"]
+size = Vector2(30, 31.375)
 
 [node name="TPiece" instance=ExtResource("1_l1jfg")]
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_run3f")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(0, -31.3125)
+shape = SubResource("RectangleShape2D_expxt")

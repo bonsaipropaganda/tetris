@@ -1,13 +1,15 @@
 extends Node
 
+signal spawn_piece
+signal start_game
+signal game_over
+signal make_static(piece_type: piece_types,rotation: int,global_position: Vector2)
 
-var pieces = []
 var current_piece
+enum piece_types {t_piece,line_piece,l_piece,j_piece,square_piece,s_piece,z_piece}
 
-func _ready():
-	add_pieces_to_array()
+var t_piece = preload("res://scenes/pieces/individual_pieces/t_piece.tscn")
 
-func add_pieces_to_array():
-	for scene in ["res://scenes/pieces/individual_pieces/t_piece.tscn"]:
-		var s = load(scene)
-		pieces.append(s)
+var t_piece_static = preload("res://scenes/pieces/individual_pieces/static_body_ver/t_piece_static.tscn")
+
+var pieces = [t_piece]
