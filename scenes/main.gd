@@ -8,16 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	pass
-	#if Global.current_piece:
-		#if Input.is_action_just_pressed("ui_right"):
-			#Global.current_piece.global_position.x += 32
-		#elif Input.is_action_just_pressed("ui_left"):
-			#Global.current_piece.global_position.x -= 32
-		#if Input.is_action_just_pressed("rotate"):
-			#rotate_piece()
-#
-#func rotate_piece():
-	#Global.current_piece.rotate(deg_to_rad(90))
+
 
 
 func _on_start_timer_timeout():
@@ -34,8 +25,3 @@ func _add_static_piece(piece_type, rotation, piece_pos):
 		p.global_position = piece_pos
 		add_child(p)
 
-#func move_piece(dir, original_pos):
-	#if Global.current_piece
-	#Global.current_piece.global_position.x += 32 * dir
-	#if Global.current_piece.is_on_wall():
-		#Global.current_piece.global_position.x = original_pos.x

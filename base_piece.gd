@@ -10,9 +10,9 @@ func _physics_process(delta):
 	velocity = Vector2(0,100)
 	if selected:
 		if Input.is_action_just_pressed("ui_right"):
-			Global.current_piece.global_position.x += 32
+			move_piece(1)
 		elif Input.is_action_just_pressed("ui_left"):
-			Global.current_piece.global_position.x -= 32
+			move_piece(-1)
 		if Input.is_action_just_pressed("rotate"):
 			rotate_piece()
 	
@@ -32,3 +32,8 @@ func rotate_piece():
 
 func _on_spawn_piece():
 	selected = false
+
+func move_piece(dir):
+	# first check for a collision in the dir
+	# if no collision then move
+	Global.current_piece.global_position.x += 32 * dir
