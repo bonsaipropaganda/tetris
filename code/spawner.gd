@@ -9,3 +9,4 @@ func spawn_piece():
 	p.global_position = self.global_position
 	owner.add_child(p)
 	Global.current_piece = p
+	p.selected = true
