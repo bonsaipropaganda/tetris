@@ -78,5 +78,17 @@ position = Vector2(110, 244)
 [node name="LineClearer11" parent="." instance=ExtResource("3_ymyx4")]
 position = Vector2(110, 212)
 
+[node name="LineClearer12" parent="." instance=ExtResource("3_ymyx4")]
+position = Vector2(110, 180)
+
+[node name="LineClearer13" parent="." instance=ExtResource("3_ymyx4")]
+position = Vector2(110, 148)
+
+[node name="LineClearer14" parent="." instance=ExtResource("3_ymyx4")]
+position = Vector2(110, 116)
+
+[node name="LineClearer15" parent="." instance=ExtResource("3_ymyx4")]
+position = Vector2(110, 84)
+
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="body_entered" from="EndArea" to="." method="_on_end_area_body_entered"]
