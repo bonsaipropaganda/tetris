@@ -25,3 +25,11 @@ func _add_static_piece(piece_type, rotation, piece_pos):
 		p.global_position = piece_pos
 		add_child(p)
 
+
+
+func _on_line_clearer_area_entered(area):
+	pass # Replace with function body.
+
+
+func _on_line_clearer_area_exited(area):
+	pass # Replace with function body.

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq8mu41x40s5y"]
+
+[ext_resource type="Script" path="res://line_clearer.gd" id="1_ir0kv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d51ox"]
+size = Vector2(350, 32)
+
+[node name="LineClearer" type="Area2D"]
+position = Vector2(110, 524)
+script = ExtResource("1_ir0kv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(172, 0)
+shape = SubResource("RectangleShape2D_d51ox")
