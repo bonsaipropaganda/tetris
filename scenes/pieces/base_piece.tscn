@@ -10,6 +10,7 @@ size = Vector2(96, 31.75)
 size = Vector2(32, 32)
 
 [node name="BasePiece" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_hfnwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

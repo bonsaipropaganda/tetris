@@ -18,11 +18,12 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if hit_ground == false:
+			Global.piece_landed.emit()
 			Global.spawn_piece.emit()
 			hit_ground = true
 			#make_static()
-	else:
-		move_and_slide()
+	#else:
+	move_and_slide()
 
 #func make_static():
 	#Global.make_static.emit(piece_type,rotation,global_position)

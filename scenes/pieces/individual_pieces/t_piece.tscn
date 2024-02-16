@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://vp8shs04l1y"]
+[gd_scene load_steps=5 format=3 uid="uid://vp8shs04l1y"]
 
 [ext_resource type="PackedScene" uid="uid://3wp4atj3sne8" path="res://scenes/pieces/base_piece.tscn" id="1_l1jfg"]
+[ext_resource type="PackedScene" uid="uid://dinebl73m30j5" path="res://block_area.tscn" id="2_bwxxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_run3f"]
 size = Vector2(94, 30)
@@ -9,6 +10,7 @@ size = Vector2(94, 30)
 size = Vector2(30, 31.375)
 
 [node name="TPiece" instance=ExtResource("1_l1jfg")]
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 0)
@@ -17,3 +19,14 @@ shape = SubResource("RectangleShape2D_run3f")
 [node name="CollisionShape2D2" parent="." index="2"]
 position = Vector2(0, -31.3125)
 shape = SubResource("RectangleShape2D_expxt")
+
+[node name="BlockArea" parent="." index="7" instance=ExtResource("2_bwxxq")]
+
+[node name="BlockArea4" parent="." index="8" instance=ExtResource("2_bwxxq")]
+position = Vector2(0, -32)
+
+[node name="BlockArea2" parent="." index="9" instance=ExtResource("2_bwxxq")]
+position = Vector2(32, 0)
+
+[node name="BlockArea3" parent="." index="10" instance=ExtResource("2_bwxxq")]
+position = Vector2(-32, 0)
