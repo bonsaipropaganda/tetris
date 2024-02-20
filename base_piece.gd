@@ -21,13 +21,24 @@ func _physics_process(delta):
 			Global.piece_landed.emit()
 			Global.spawn_piece.emit()
 			hit_ground = true
-			#make_static()
+			seperate_into_blocks()
 	#else:
 	move_and_slide()
 
-#func make_static():
-	#Global.make_static.emit(piece_type,rotation,global_position)
-	#queue_free()
+
+func seperate_into_blocks():
+	for marker in $BlockPoints.get_children():
+		var p = Global.single_block.instantiate()
+		get_parent().add_child(p)
+		p.global_position = marker.global_position
+	queue_free()
+
+func make_static_blocks():
+	for marker in $BlockPoints.get_children():
+		print(marker.global_position)
+		Global.make_static.emit(Global.piece_types.single_block,0,marker.global_position)
+	queue_free()
+
 func rotate_piece():
 	Global.current_piece.rotate(deg_to_rad(90))
 

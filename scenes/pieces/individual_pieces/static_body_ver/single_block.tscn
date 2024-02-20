@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj3fv7j3q2nqr"]
+
+[ext_resource type="Texture2D" uid="uid://dnt1eifd62jg4" path="res://art/FREE_Tetris_Asset_Pack/blocks/blue_block/blue_block.png" id="1_5f3de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq56j"]
+size = Vector2(30, 30)
+
+[node name="SingleBlock" type="StaticBody2D" groups=["single_block"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5f3de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lq56j")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "single block"

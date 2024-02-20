@@ -24,7 +24,12 @@ func _add_static_piece(piece_type, rotation, piece_pos):
 		p.rotation = rotation
 		p.global_position = piece_pos
 		add_child(p)
-
+	
+	elif piece_type == Global.piece_types.single_block:
+		var p = Global.single_block.instantiate()
+		p.rotation = rotation
+		add_child(p)
+		p.global_position = piece_pos
 
 
 func _on_line_clearer_area_entered(area):
