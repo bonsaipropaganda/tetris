@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj3fv7j3q2nqr"]
+[gd_scene load_steps=5 format=3 uid="uid://cj3fv7j3q2nqr"]
 
 [ext_resource type="Texture2D" uid="uid://dnt1eifd62jg4" path="res://art/FREE_Tetris_Asset_Pack/blocks/blue_block/blue_block.png" id="1_5f3de"]
+[ext_resource type="Script" path="res://code/single_block.gd" id="1_5mcr5"]
+[ext_resource type="PackedScene" uid="uid://dinebl73m30j5" path="res://block_area.tscn" id="2_gjenc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lq56j"]
-size = Vector2(30, 30)
+size = Vector2(29, 29)
 
-[node name="SingleBlock" type="StaticBody2D" groups=["single_block"]]
-collision_layer = 3
+[node name="SingleBlock" type="CharacterBody2D" groups=["single_block"]]
+collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_5mcr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5f3de")
@@ -19,3 +22,5 @@ shape = SubResource("RectangleShape2D_lq56j")
 offset_right = 40.0
 offset_bottom = 23.0
 text = "single block"
+
+[node name="BlockArea" parent="." groups=["block"] instance=ExtResource("2_gjenc")]

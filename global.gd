@@ -5,6 +5,7 @@ signal start_game
 signal game_over
 signal make_static(piece_type: piece_types,rotation: int,global_position: Vector2)
 signal piece_landed
+signal line_cleared
 
 var current_piece
 enum piece_types {single_block,t_piece,line_piece,l_piece,j_piece,square_piece,s_piece,z_piece}
